@@ -115,7 +115,7 @@ IncludeTemplateLangFile(__FILE__);
                         
                         <? if ($APPLICATION->GetCurPage(false) !== '/'): ?>
                             <header>
-                                <h1><?$APPLICATION->ShowTitle();?></h1>
+                                <h1><?$APPLICATION->ShowTitle(false);?></h1>
                             </header>
                             <hr>
                         <? endif; ?>  
