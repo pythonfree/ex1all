@@ -23,7 +23,9 @@ IncludeTemplateLangFile(__FILE__);
     Asset::getInstance()->addString('<link rel="shortcut icon" href="'
                                     . SITE_TEMPLATE_PATH . '/img/favicon.ico">');
     
-    CJSCore::Init(['jquery']);
+    //CJSCore::Init(['jquery']);
+
+    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.min.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/owl.carousel.min.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/scripts.js');
     
