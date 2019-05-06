@@ -26,14 +26,16 @@ $this->setFrameMode(true);
 				<div class="title">
 					<div class="photo-block">
 						<?if(is_array($arItem["PREVIEW_PICTURE"])):?>
-							<img
-								 src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
-								 alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
-							>
+							<?
+							   $renderImage = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"],
+													   Array("width" => 64, "height" => 56),
+													   BX_RESIZE_IMAGE_EXACT, false); 
+							   echo '<img alt="'.$arItem["NAME"].'" src="'.$renderImage["src"].'">'; 
+							?>
 						<?else:?>
 							<img
-								 src="<?=SITE_TEMPLATE_PATH;?>/img/rew/no_photo.jpg"
-								 alt="<?=$arItem["NAME"];?>"
+								 src="http://localhost/upload/medialibrary/6d4/6d47ad4fa8ca4e0192a40b3a58cc4a1b.jpg"
+								  alt="<?=$arItem["NAME"];?>"
 							>
 						<?endif;?>
 					</div>
