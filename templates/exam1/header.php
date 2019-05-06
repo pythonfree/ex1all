@@ -49,10 +49,17 @@ IncludeTemplateLangFile(__FILE__);
                     <div class="shedule">время работы с 9-00 до 18-00</div>
                 </div>
                 <div class="actions-block">
-                    <form action="/" class="main-frm-search">
-                        <input type="text" placeholder="Поиск">
-                        <button type="submit"></button>
-                    </form>
+					
+							<?$APPLICATION->IncludeComponent(
+	"bitrix:search.form", 
+	"head", 
+	array(
+		"COMPONENT_TEMPLATE" => "head",
+		"PAGE" => "#SITE_DIR#search/index.php",
+		"USE_SUGGEST" => "Y"
+	),
+	false
+);?>
 
                          <?$APPLICATION->IncludeComponent(
 							"bitrix:system.auth.form", 
